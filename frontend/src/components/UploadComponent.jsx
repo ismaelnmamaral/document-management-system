@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function UploadForm({ onUpload, uploading }) {
+export default function UploadComponent({ onUpload, uploading }) {
   const [owner, setOwner] = useState('');
   const [file, setFile] = useState(null);
 

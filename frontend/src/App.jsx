@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import DocumentList from './components/DocumentList.jsx';
-import UploadForm from './components/UploadForm.jsx';
+import UploadComponent from './components/UploadComponent.jsx';
 import { listDocuments, uploadDocument } from './services/documentService.js';
 import './App.css';
 
@@ -55,7 +55,7 @@ export default function App() {
       {error && <p className="alert" role="alert">{error}</p>}
 
       <section className="workspace" aria-label="Gerenciamento de documentos">
-        <UploadForm onUpload={handleUpload} uploading={uploading} />
+        <UploadComponent onUpload={handleUpload} uploading={uploading} />
         <DocumentList documents={documents} loading={loading} />
       </section>
     </main>
