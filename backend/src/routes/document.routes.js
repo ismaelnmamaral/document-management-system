@@ -4,11 +4,8 @@ const crypto = require('node:crypto');
 const path = require('node:path');
 const documentController = require('../controllers/document.controller');
 const {
-  ensureStorageDirectory,
   getStorageDirectory,
 } = require('../repositories/document.repository');
-
-ensureStorageDirectory();
 
 const upload = multer({
   storage: multer.diskStorage({
