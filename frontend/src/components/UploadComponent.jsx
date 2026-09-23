@@ -9,8 +9,8 @@ export default function UploadComponent({ onUpload, uploading }) {
     if (!file || !owner.trim()) return;
 
     await onUpload({ file, owner: owner.trim() });
+    setOwner('');
     setFile(null);
-    event.target.reset();
   }
 
   return (
