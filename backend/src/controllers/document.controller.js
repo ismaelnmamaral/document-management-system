@@ -17,9 +17,9 @@ function listDocuments(req, res, next) {
   }
 }
 
-function downloadDocument(req, res, next) {
+async function downloadDocument(req, res, next) {
   try {
-    const { document, filePath } = documentService.getDocumentForDownload(req.params.id);
+    const { document, filePath } = await documentService.getDocumentForDownload(req.params.id);
     res.download(filePath, document.originalName, (error) => {
       if (error && !res.headersSent) {
         next(error);
