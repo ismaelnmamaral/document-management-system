@@ -2,8 +2,11 @@ const express = require('express');
 const multer = require('multer');
 const crypto = require('node:crypto');
 const path = require('node:path');
-const documentController = require('../controllers/documentController');
-const { ensureStorageDirectory, getStorageDirectory } = require('../repositories/documentRepository');
+const documentController = require('../controllers/document.controller');
+const {
+  ensureStorageDirectory,
+  getStorageDirectory,
+} = require('../repositories/document.repository');
 
 ensureStorageDirectory();
 

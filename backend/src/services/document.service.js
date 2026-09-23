@@ -1,6 +1,6 @@
 const crypto = require('node:crypto');
 const fs = require('node:fs');
-const documentRepository = require('../repositories/documentRepository');
+const documentRepository = require('../repositories/document.repository');
 
 function createError(code, message, statusCode) {
   const error = new Error(message);

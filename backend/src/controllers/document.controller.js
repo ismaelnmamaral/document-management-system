@@ -1,4 +1,4 @@
-const documentService = require('../services/documentService');
+const documentService = require('../services/document.service');
 
 function createUpload(req, res, next) {
   try {
