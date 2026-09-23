@@ -49,14 +49,16 @@ function listDocuments(owner) {
     .map(toPublicDocument);
 }
 
-function getDocumentForDownload(id) {
+async function getDocumentForDownload(id) {
   const document = documentRepository.findById(id);
   if (!document) {
     throw createError('DOCUMENT_NOT_FOUND', 'Documento não encontrado.', 404);
   }
 
   const filePath = documentRepository.getFilePath(document);
-  if (!fs.existsSync(filePath)) {
+  try {
+    await fs.promises.access(filePath, fs.constants.F_OK);
+  } catch (error) {
     throw createError('FILE_NOT_FOUND', 'Arquivo do documento não encontrado.', 404);
   }
 
